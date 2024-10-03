@@ -37,4 +37,16 @@ pub enum LygenCommand {
         #[command(flatten)]
         options: Options,
     },
+
+    /// GNU General Public License v2.0
+    Gplv2 {
+        #[command(flatten)]
+        options: Options,
+    },
+
+    /// GNU General Public License v3.0
+    Gplv3 {
+        #[command(flatten)]
+        options: Options,
+    },
 }

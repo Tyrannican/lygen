@@ -13,6 +13,8 @@ fn main() -> Result<()> {
     let license = match cli.commands {
         LygenCommand::Mit { options } => License::new(options, LicenseType::Mit),
         LygenCommand::Apache2 { options } => License::new(options, LicenseType::Apache2),
+        LygenCommand::Gplv2 { options } => License::new(options, LicenseType::GPLv2),
+        LygenCommand::Gplv3 { options } => License::new(options, LicenseType::GPLv3),
     };
 
     if let Err(e) = license.write() {
