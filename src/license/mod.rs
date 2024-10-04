@@ -10,6 +10,17 @@ pub enum LicenseType {
     Apache2,
     GPLv2,
     GPLv3,
+    AGPLv3,
+    LGPLv2,
+    LGPLv3,
+    ISC,
+    BSD0,
+    BSD2,
+    BSD3,
+    Mozilla,
+    Unlicense,
+    Zlib,
+    Dwtfywt,
 }
 
 #[derive(Debug)]
@@ -25,6 +36,17 @@ impl License {
             LicenseType::Apache2 => LicenseGen::apache2(),
             LicenseType::GPLv2 => LicenseGen::gplv2(),
             LicenseType::GPLv3 => LicenseGen::gplv3(),
+            LicenseType::AGPLv3 => LicenseGen::agplv3(),
+            LicenseType::LGPLv2 => LicenseGen::lgplv2(),
+            LicenseType::LGPLv3 => LicenseGen::lgplv3(),
+            LicenseType::ISC => LicenseGen::isc(opts.name),
+            LicenseType::BSD0 => LicenseGen::bsd0(opts.name),
+            LicenseType::BSD2 => LicenseGen::bsd2(opts.name),
+            LicenseType::BSD3 => LicenseGen::bsd3(opts.name),
+            LicenseType::Mozilla => LicenseGen::mozilla(),
+            LicenseType::Unlicense => LicenseGen::unlicense(),
+            LicenseType::Zlib => LicenseGen::zlib(opts.name),
+            LicenseType::Dwtfywt => LicenseGen::dwtfywt(),
         };
 
         let out_dir = match opts.output_dir {
