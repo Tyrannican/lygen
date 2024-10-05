@@ -2,12 +2,11 @@ mod cli;
 mod license;
 
 use clap::Parser;
-use std::io::Result;
 
 use cli::{Cli, LygenCommand};
 use license::{License, LicenseType};
 
-fn main() -> Result<()> {
+fn main() {
     let cli = Cli::parse();
 
     let license = match cli.commands {
@@ -31,6 +30,4 @@ fn main() -> Result<()> {
     if let Err(e) = license.write() {
         eprintln!("error writing license to disk - {e}");
     }
-
-    Ok(())
 }
