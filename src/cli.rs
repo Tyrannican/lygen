@@ -50,12 +50,6 @@ pub enum LygenCommand {
         options: Options,
     },
 
-    /// GNU Affero General Public License v3.0
-    Agplv3 {
-        #[command(flatten)]
-        options: Options,
-    },
-
     /// GNU Lesser General Public License v2.1
     Lgplv2 {
         #[command(flatten)]
@@ -64,6 +58,12 @@ pub enum LygenCommand {
 
     /// GNU Lesser General Public License v3.0
     Lgplv3 {
+        #[command(flatten)]
+        options: Options,
+    },
+
+    /// GNU Affero General Public License v3.0
+    Agplv3 {
         #[command(flatten)]
         options: Options,
     },
